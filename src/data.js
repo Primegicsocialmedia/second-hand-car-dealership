@@ -1,7 +1,7 @@
 export const dealers = [
   {
     id: 1,
-    name: 'AutoHub',
+    name: 'Nates Car Sales',
     location: 'Downtown',
     description: 'Leading car dealership in the heart of the city.',
     cars: [
@@ -17,7 +17,7 @@ export const dealers = [
   },
   {
     id: 1,
-    name: 'AutoHub',
+    name: 'Auto Connection',
     location: 'Downtown',
     description: 'Leading car dealership in the heart of the city.',
     cars: [
