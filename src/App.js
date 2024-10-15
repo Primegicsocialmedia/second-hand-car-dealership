@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import HomePage from './pages/HomePage';
+import BargainsPage from './pages/BargainsPage';
+import DealerPage from './pages/DealerPage';
+import CarDetailsPage from './pages/CarDetailsPage';
+import ContactPage from './pages/ContactPage';
+
+import { motion } from 'framer-motion';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="min-h-screen flex flex-col">
+        <Navbar /> {/* Ensure Navbar is outside of Routes */}
+        <div className="flex-grow">
+          <Routes>
+            <Route
+              path="/"
+              element={<HomePage />}
+            />
+            <Route
+              path="/bargains"
+              element={<BargainsPage />}
+            />
+            <Route
+              path="/dealer/:id"
+              element={<DealerPage />}
+            />
+            <Route
+              path="/dealer/:dealerId/car/:carId"
+              element={<CarDetailsPage />}
+            />
+            <Route
+              path="/contact"
+              element={<ContactPage />}
+            />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
 export default App;
+
+
+
+
+
